@@ -6,7 +6,13 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://student-management-vert-tau.vercel.app/', // Replace with your exact Vercel URL
+        'http://localhost:3000'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 const studentSchema = new mongoose.Schema(
