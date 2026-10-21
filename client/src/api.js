@@ -1,5 +1,6 @@
+const BASE_URL = process.env.REACT_APP_API_URL || "https://student-management-nani.onrender.com";
+const API_URL = `${BASE_URL}/api/students`;
 
-const API_URL = "/api/students";
 async function request(path = "", options = {}) {
     const response = await fetch(`${API_URL}${path}`, {
         ...options,
